@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Analytics } from '@vercel/analytics/react';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -40,6 +41,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <Analytics />
     </QueryClientProvider>
   );
 }
