@@ -796,6 +796,9 @@ export const contact: Contact = {
   github: 'https://github.com/devanshnegi88',
   linkedin: 'https://linkedin.com/in/devansh-negi005',
   resume: '/Devansh_Backend_v2.docx',
+  // Optional: set to a Formspree or server endpoint to receive form submissions.
+  // Example: 'https://formspree.io/f/your-id' or '/api/contact'
+  formEndpoint: '/api/contact',
 };
 
 export const footer: Footer = {

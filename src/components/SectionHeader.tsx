@@ -37,7 +37,7 @@ export function SectionHeader({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight"
+        className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight"
       >
         {title}{' '}
         {titleAccent && (

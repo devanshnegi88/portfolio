@@ -88,6 +88,7 @@ export interface Contact {
   github: string;
   linkedin: string;
   resume: string;
+  formEndpoint?: string;
 }
 
 export interface Footer {

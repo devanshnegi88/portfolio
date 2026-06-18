@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { stats } from '../data/portfolioData';
+import { stats, personal } from '../data/portfolioData';
+import { useGitHubContributions } from '../hooks/useGitHubContributions';
 
 function StatCounter({ value, suffix }: { value: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -47,6 +48,15 @@ function StatCounter({ value, suffix }: { value: number; suffix: string }) {
 }
 
 export function StatsSection() {
+  const gh = useGitHubContributions(personal.githubUsername);
+
+  const displayStats = stats.map((s) => {
+    if (s.label === 'Github Contributions') {
+      const val = gh.data ?? s.value;
+      return { ...s, value: Number(val) };
+    }
+    return s;
+  });
   return (
     <section className="py-16 relative">
       <div className="absolute inset-0 -z-10">
@@ -54,8 +64,8 @@ export function StatsSection() {
       </div>
 
       <div className="container-custom">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {stats.map((stat, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {displayStats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}

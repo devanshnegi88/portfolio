@@ -23,7 +23,7 @@ export function ProjectsSection() {
           description="These aren't side projects collecting dust. Each one handles real use cases, uses proper architecture, and is deployed to a live environment."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
           {visible.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}

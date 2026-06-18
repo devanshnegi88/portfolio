@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../components/SocialIcons';
 import { hero, personal } from '../data/portfolioData';
+import { useEffect, useState } from 'react';
 
 const techChips = ['FastAPI', 'Python', 'LLMs', 'Agentic RAG', 'MongoDB', 'Docker'];
 
@@ -9,6 +10,57 @@ export function HeroSection() {
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const roles = ['Backend Developer', 'AI Engineer', 'Full Stack Developer', 'Open Source Contributor'];
+  const [typedAccent, setTypedAccent] = useState('');
+
+  useEffect(() => {
+    // allow forced typing for testing: ?forceTyping=1 or localStorage.forceTyping=1
+    const urlParams = new URLSearchParams(window.location.search);
+    const forceTyping = urlParams.get('forceTyping') === '1' || localStorage.getItem('forceTyping') === '1';
+    const reduced = !forceTyping && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      setTypedAccent(roles[0]);
+      return;
+    }
+
+    let mounted = true;
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function tick() {
+      const current = roles[roleIndex];
+      if (!deleting) {
+        charIndex += 1;
+        setTypedAccent(current.slice(0, charIndex));
+        if (charIndex === current.length) {
+          // pause before deleting
+          setTimeout(() => {
+            deleting = true;
+            tick();
+          }, 900);
+          return;
+        }
+      } else {
+        charIndex -= 1;
+        setTypedAccent(current.slice(0, charIndex));
+        if (charIndex === 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+      }
+
+      const delay = deleting ? 40 : 80;
+      if (mounted) setTimeout(tick, delay);
+    }
+
+    const starter = setTimeout(tick, 300);
+    return () => {
+      mounted = false;
+      clearTimeout(starter);
+    };
+  }, []);
 
   return (
     <section
@@ -40,13 +92,27 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              <h1 className="text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight leading-[1.05] mb-6">
-                <span className="text-white">Backend & </span>
-                <br className="hidden lg:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-                  AI Engineer
+              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-normal leading-tight mb-6">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 whitespace-nowrap">
+                  {typedAccent}
+                  <span className="typing-caret" aria-hidden />
                 </span>
               </h1>
+            </motion.div>
+
+            {/* Open to opportunities badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.08 }}
+              className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-emerald-900/30 border border-emerald-600/20 text-emerald-200 text-sm font-medium mt-2 lg:mt-4"
+              aria-live="polite"
+              title="Open to opportunities"
+            >
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" aria-hidden />
+                <span>Open to opportunities</span>
+              </span>
             </motion.div>
 
             {/* Description */}
@@ -54,7 +120,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-slate-400 text-lg md:text-xl leading-relaxed max-w-xl"
+              className="text-slate-400 text-sm md:text-base leading-relaxed max-w-lg"
             >
               Building scalable backend systems, Agentic RAG applications, AI-powered products, and cloud-native APIs using Python, FastAPI, and modern LLM frameworks.
             </motion.p>
@@ -136,13 +202,13 @@ export function HeroSection() {
               {/* Concentric rings container */}
               <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-[320px] lg:h-[320px] flex items-center justify-center">
                 {/* Outermost ring */}
-                <div className="absolute inset-0 rounded-full border border-white/[0.1] scale-125"></div>
+                <div className="absolute inset-0 rounded-full border border-white/[0.1] scale-125 ring-rotate ring-glow" />
                 
                 {/* Middle ring */}
-                <div className="absolute inset-0 rounded-full border border-white/[0.06] scale-115"></div>
+                <div className="absolute inset-0 rounded-full border border-white/[0.06] scale-115 ring-rotate-reverse ring-glow-2" />
                 
                 {/* Inner ring (image container) */}
-                <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-[320px] lg:h-[320px] rounded-full overflow-hidden border border-white/[0.08] shadow-2xl bg-[#0a0a0f]">
+                <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-[320px] lg:h-[320px] rounded-full overflow-hidden border border-white/[0.08] shadow-2xl bg-[#0a0a0f] ring-float ring-inner-glow">
                   <img
                     src={personal.profileImage}
                     alt={personal.name}
@@ -152,6 +218,8 @@ export function HeroSection() {
                   />
                 </div>
               </div>
+              {/* Professional info cards beneath the image */}
+              {/* professional info cards removed per request */}
             </div>
           </motion.div>
 

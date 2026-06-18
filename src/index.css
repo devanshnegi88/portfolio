@@ -25,6 +25,8 @@
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
   }
 
   body {
@@ -34,6 +36,14 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  /* Prevent iOS/Android auto-zoom when focusing inputs by ensuring minimum font-size */
+  input,
+  textarea,
+  button,
+  select {
+    font-size: 16px;
   }
 
   ::selection {
@@ -62,6 +72,13 @@
   pre {
     font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
   }
+  }
+
+/* Responsive image defaults to prevent overflow on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 @layer utilities {
@@ -187,4 +204,132 @@
     color: #C4B5FD;
     border-color: rgba(139, 92, 246, 0.2);
   }
+
+  /* Skills marquee */
+  .skills-marquee {
+    overflow: hidden;
+  }
+
+  .skills-track {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  .skill-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 2.25rem;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  .skill-pill::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background: var(--accent, #06B6D4);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.6), 0 0 18px rgba(6,182,212,0.08);
+  }
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .skills-track {
+      animation: marquee-left 22s linear infinite;
+    }
+  }
+
+
+
+/* Ring animations for hero profile */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
+
+@keyframes spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes floaty {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Respect user preference for reduced motion - only animate when allowed */
+@media (prefers-reduced-motion: no-preference) {
+  .ring-rotate {
+    animation: spin 30s linear infinite;
+    transform-origin: center center;
+  }
+
+  .ring-rotate-reverse {
+    animation: spin-reverse 40s linear infinite;
+    transform-origin: center center;
+  }
+
+  .ring-float {
+    animation: floaty 6s ease-in-out infinite;
+  }
+}
+
+/* Brighten rings and add subtle glow */
+.ring-glow {
+  border-color: rgba(6, 182, 212, 0.36) !important;
+  box-shadow: 0 0 28px rgba(6, 182, 212, 0.18), 0 0 56px rgba(6, 182, 212, 0.08) inset;
+}
+
+.ring-glow-2 {
+  border-color: rgba(6, 182, 212, 0.28) !important;
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.14), 0 0 40px rgba(6, 182, 212, 0.06) inset;
+}
+
+.ring-inner-glow {
+  box-shadow: 0 10px 56px rgba(6, 182, 212, 0.16), inset 0 6px 18px rgba(6,182,212,0.04);
+}
+
+/* Card hover glow (used for contact form card) */
+.card-glow {
+  transition: box-shadow 220ms cubic-bezier(.2,.9,.2,1), transform 220ms cubic-bezier(.2,.9,.2,1), border-color 220ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-glow:hover {
+    transform: translateY(-6px);
+    border-color: rgba(6,182,212,0.22);
+    box-shadow: 0 18px 60px rgba(6,182,212,0.14), 0 6px 20px rgba(6,182,212,0.06) inset;
+  }
+}
+
+/* Typing caret for hero headline accent */
+.typing-caret {
+  display: inline-block;
+  width: 2px;
+  margin-left: 8px;
+  background: #06B6D4; /* cyan caret to show on gradient text */
+  vertical-align: middle;
+  animation: blink-caret 1s steps(1) infinite;
+}
+
+@keyframes blink-caret {
+  50% { opacity: 0; }
+}}

@@ -6,6 +6,7 @@ import { HeroSection } from './sections/HeroSection';
 import { StatsSection } from './sections/StatsSection';
 import { AboutSection } from './sections/AboutSection';
 import { ProjectsSection } from './sections/ProjectsSection';
+import SkillsMarquee from './components/SkillsMarquee';
 import { ExperienceSection } from './sections/ExperienceSection';
 import { SkillsSection } from './sections/SkillsSection';
 import { GitHubSection } from './sections/GitHubSection';
@@ -30,6 +31,7 @@ export default function App() {
           <HeroSection />
           <StatsSection />
           <AboutSection />
+          <SkillsMarquee />
           <ProjectsSection />
           <ExperienceSection />
           <SkillsSection />

@@ -16,7 +16,7 @@ export function ExperienceSection() {
         />
 
         <div className="relative">
-          <div className="absolute left-4 md:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-cyan-500/50 via-blue-500/30 to-transparent" />
+          <div className="absolute left-2 sm:left-4 md:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-cyan-500/50 via-blue-500/30 to-transparent" />
 
           <div className="space-y-8">
             {experience.map((exp, i) => (
@@ -26,9 +26,9 @@ export function ExperienceSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="relative pl-14 md:pl-20"
+                className="relative pl-12 sm:pl-14 md:pl-20"
               >
-                <div className="absolute left-2 md:left-4 top-1.5 w-4 h-4 rounded-full border-2 border-cyan-500 bg-[#0A0A0F] flex items-center justify-center">
+                <div className="absolute left-1 sm:left-2 md:left-4 top-1.5 w-4 h-4 rounded-full border-2 border-cyan-500 bg-[#0A0A0F] flex items-center justify-center">
                   <div className={`w-1.5 h-1.5 rounded-full ${exp.current ? 'bg-cyan-400' : 'bg-slate-600'}`} />
                 </div>
 

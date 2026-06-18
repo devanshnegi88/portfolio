@@ -25,7 +25,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Project Image / Visual Header */}
-      <div className="relative h-48 bg-gradient-to-br from-[#1a1a2e] to-[#0f0f1a] overflow-hidden">
+      <div className="relative h-40 sm:h-48 bg-gradient-to-br from-[#1a1a2e] to-[#0f0f1a] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/10 via-blue-600/5 to-cyan-600/10" />
         {/* Abstract architecture visualization */}
         <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-30 transition-opacity duration-500">
