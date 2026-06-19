@@ -276,8 +276,8 @@ export const projects: Project[] = [
     ],
 
     links: {
-      github: 'https://github.com/devanshnegi88',
-      live: undefined,
+      github: 'https://github.com/devanshnegi88/Golf--Charity--Platform',
+      live: 'https://par4good-gamma.vercel.app/',
     },
 
     featured: true,
@@ -323,7 +323,7 @@ export const projects: Project[] = [
       'Edge Functions',
     ],
     links: {
-      github: 'https://github.com/devanshnegi88',
+      github: 'https://github.com/devanshnegi88/Golf--Charity--Platform',
       live: 'https://par4good-gamma.vercel.app/',
     },
     featured: true,
@@ -421,7 +421,7 @@ export const projects: Project[] = [
 
   tech: [
     'Python',
-    'Flask',
+    'FastAPI',
     'FAISS',
     'Sentence Transformers',
     'RAG',
