@@ -15,11 +15,25 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
   return (
     <motion.div
+
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative rounded-2xl border border-white/8 bg-[#111118] hover:border-cyan-500/30 transition-all duration-500 overflow-hidden"
+      className="
+group
+relative
+rounded-2xl
+border
+border-white/8
+bg-[#111118]
+overflow-hidden
+transition-all
+duration-500
+hover:-translate-y-2
+hover:border-cyan-500/50
+hover:shadow-[0_0_40px_rgba(6,182,212,0.35)]
+"
     >
       {/* Gradient top accent */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

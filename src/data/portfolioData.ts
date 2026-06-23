@@ -104,7 +104,7 @@ export const stats: Stat[] = [
     description: 'Query & response time improvement',
   },
   {
-    value: 170,
+    value: 200,
     suffix: '+',
     label: 'Github Contributions',
     description: '',
@@ -192,6 +192,7 @@ export const experience: Experience[] = [
 export const projects: Project[] = [
   {
     id: 'payment-orchestration',
+    category: 'Backend',
     title: 'Payment Orchestration Platform',
     description:
       'Multi-gateway payment router with circuit-breaker logic, Redis caching, and real-time monitoring. Handles Stripe, Razorpay, PayU, and UPI routing with automatic failover.',
@@ -223,7 +224,7 @@ export const projects: Project[] = [
     metrics: [
       { label: 'Response Time', value: '<50ms' },
       { label: 'Gateways', value: '4' },
-      { label: 'Uptime', value: '99.9%' },
+      { label: 'Uptime', value: '90%' },
     ],
   },
 
@@ -232,8 +233,8 @@ export const projects: Project[] = [
   {
     id: 'multimodal-agentic-rag',
     title: 'Multimodal Agentic RAG System',
-    description:
-      'Production-grade multi-agent Retrieval-Augmented Generation platform supporting documents, images, intelligent routing, vector search, and agent conflict resolution.',
+    category: 'GenAI',
+    description:'Production-grade multi-agent Retrieval-Augmented Generation platform supporting documents, images, intelligent routing, vector search, and agent conflict resolution.',
 
     longDescription:
       'A full-stack AI platform built using LangGraph and LangChain that orchestrates multiple specialized AI agents for planning, retrieval, reasoning, validation, and response generation. The system supports multimodal document understanding, vector search using FAISS, conversation memory, intelligent agent routing, and conflict resolution between agents. Designed for scalable enterprise knowledge retrieval and contextual AI assistance.',
@@ -302,6 +303,7 @@ export const projects: Project[] = [
   {
     id: 'golf-charity',
     title: 'Golf Charity Platform',
+    category: 'Full Stack',
     description:
       'Full-stack charity management platform with Stripe subscription billing, webhook processing, donor management, RBAC, and a real-time admin dashboard.',
     longDescription:
@@ -339,6 +341,7 @@ export const projects: Project[] = [
   id: 'hybrid-disease-prediction-system',
 
   title: 'Hybrid Disease Prediction System',
+  category: 'AI/ML',
 
   description:
     'AI-powered healthcare decision support platform that predicts diseases from user symptoms and recommends suitable hospitals using machine learning models and intelligent healthcare analytics.',
@@ -410,6 +413,7 @@ export const projects: Project[] = [
   id: 'rag-conversation-intelligence',
 
   title: 'RAG-Based Conversation Intelligence System',
+  category: 'GenAI',
 
   description:
     'AI-powered conversation intelligence platform that combines topic-aware RAG retrieval, persona extraction, semantic search, and conversational analytics to transform raw conversations into structured knowledge.',
@@ -482,6 +486,7 @@ export const projects: Project[] = [
   id: 'rag-memory-intelligence-platform',
 
   title: 'Memory Intelligence & Conflict Resolution Platform',
+  category: 'GenAI',
 
   description:
     'Advanced AI memory platform that combines conversation intelligence, adaptive persona tracking, offline intent classification, and conflict-aware RAG retrieval for long-term contextual understanding.',
@@ -553,6 +558,7 @@ export const projects: Project[] = [
   id: 'ai-smart-study-assistant',
 
   title: 'AI-Powered Smart Study Assistant',
+  category:'Backend',
 
   description:
     'Intelligent learning platform that combines AI-powered academic assistance, personalized study planning, automated note summarization, quiz generation, flashcards, and progress analytics to improve student productivity.',
@@ -627,6 +633,7 @@ export const projects: Project[] = [
   id: 'ocr-receipt-information-extraction',
 
   title: 'OCR-Based Receipt Information Extraction',
+  category: 'Computer Vision',
 
   description:
     'Document intelligence system that extracts structured information from receipt images using OCR, image preprocessing, confidence scoring, and automated field detection.',
@@ -747,6 +754,7 @@ export const certifications: Certification[] = [
     issuer: 'Simplilearn',
     date: '2024',
     type: 'course',
+    verifyUrl: 'https://verify-link-here'
   },
   {
     title: 'Introduction to Artificial Intelligence',

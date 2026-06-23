@@ -52,6 +52,7 @@ export interface Experience {
 }
 
 export interface Project {
+  category: string;
   id: string;
   title: string;
   description: string;
@@ -71,6 +72,8 @@ export interface Certification {
   issuer: string;
   date: string;
   type: 'work' | 'course' | 'project';
+  verifyUrl?: string;
+  badgeUrl?: string;
 }
 
 export interface Education {

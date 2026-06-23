@@ -252,7 +252,7 @@ img {
 
   @media (prefers-reduced-motion: no-preference) {
     .skills-track {
-      animation: marquee-left 22s linear infinite;
+      animation: marquee-left 12s linear infinite;
     }
   }
 

@@ -32,7 +32,19 @@ export function ExperienceSection() {
                   <div className={`w-1.5 h-1.5 rounded-full ${exp.current ? 'bg-cyan-400' : 'bg-slate-600'}`} />
                 </div>
 
-                <div className="p-6 rounded-2xl glass border border-white/5 hover:border-cyan-500/30 transition-all duration-300 group">
+                <div className="
+  p-6
+  rounded-2xl
+  glass
+  border
+  border-white/5
+  transition-all
+  duration-500
+  group
+  hover:border-cyan-500/50
+  hover:-translate-y-2
+  hover:shadow-[0_0_40px_rgba(6,182,212,0.35)]
+">
                   {/* Header */}
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                     <div>

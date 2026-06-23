@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, Briefcase, BookOpen } from 'lucide-react';
+import { Award, Briefcase, BookOpen ,ExternalLink} from 'lucide-react';
 import { certifications } from '../data/portfolioData';
 import { SectionHeader } from '../components/SectionHeader';
 import type { Certification } from '../types';
