@@ -30,10 +30,25 @@ function CertCard({ cert, index }: { cert: Certification; index: number }) {
           {cert.title}
         </h3>
         <p className="text-xs text-slate-400">{cert.issuer}</p>
-        <div className="flex items-center gap-2 mt-2">
+        <div className="flex items-center gap-2 mt-2 flex-wrap">
           <span className={`text-xs font-medium ${cfg.color}`}>{cfg.label}</span>
           <span className="text-slate-700">·</span>
           <span className="text-xs text-slate-600">{cert.date}</span>
+          {cert.verifyUrl && (
+            <>
+              <span className="text-slate-700">·</span>
+              <a
+                href={cert.verifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-1 text-xs font-medium ${cfg.color} opacity-70 hover:opacity-100 transition-opacity`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ExternalLink size={10} />
+                Verify
+              </a>
+            </>
+          )}
         </div>
       </div>
     </motion.div>

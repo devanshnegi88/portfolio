@@ -73,8 +73,9 @@ export const hero: Hero = {
 
 export const about: About = {
   bio: [
-    'I\'m a backend-focused engineer who ships production systems — not demos. My work spans payment orchestration, AI-powered RAG pipelines, and multi-gateway financial platforms that handle real transactions.',
-    'I care deeply about system design, performance engineering, and writing code that scales. When I\'m not building APIs, I\'m exploring LLM integration patterns, vector databases, and agentic workflows.',
+    'Backend and AI engineer focused on building scalable APIs, production-grade backend systems, and intelligent applications powered by LangChain, LangGraph, and modern LLMs. My work includes RAG systems, AI agents, vector databases, and cloud-native architectures.',
+
+'I enjoy designing software that combines robust backend engineering with AI capabilities to solve real-world problems at scale.'
   ],
   highlights: [
     { icon: 'MapPin', label: 'Location', value: 'Dehradun, India' },
@@ -742,50 +743,73 @@ export const certifications: Certification[] = [
     issuer: 'Visiomatix Media Pvt. Ltd.',
     date: '2026',
     type: 'work',
+    verifyUrl: '/Certificate For intrenship.pdf',
   },
   {
     title: 'Project Work Experience Certificate',
     issuer: 'Payment Orchestration Layer',
     date: '2025',
     type: 'project',
+    verifyUrl: '/certificate-j3ki86pwinkm-1781276597.pdf',
+  },
+   {
+    title: 'Introduction to MCP',
+    issuer: 'Course',
+    date: '2026',
+    type: 'course',
+    verifyUrl: '/Introduction to mcp.pdf',
+  },
+
+    {
+    title: 'MCP Advanced concepts',
+    issuer: 'Course',
+    date: '2026',
+    type: 'course',
+    verifyUrl: '/certificate-j3ki86pwinkm-1781276597.pdf',
   },
   {
     title: 'Machine Learning using Python',
     issuer: 'Simplilearn',
     date: '2024',
     type: 'course',
-    verifyUrl: 'https://verify-link-here'
+    verifyUrl: '/ml using python.pdf',
   },
-  {
-    title: 'Introduction to Artificial Intelligence',
-    issuer: 'Simplilearn',
-    date: '2024',
-    type: 'course',
-  },
+  // {
+  //   title: 'Introduction to Artificial Intelligence',
+  //   issuer: 'Simplilearn',
+  //   date: '2024',
+  //   type: 'course',
+  //   verifyUrl: 'https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI3NjMiLCJjZXJ0aWZpY2F0ZV91cmwiOiJodHRwczovL2NlcnRpZmljYXRlcy5zaW1wbGlsZWFybi5jb20vc2hhcmUvdGh1bWIvMGRkZGU0ZjM5ODhmYzY5ODNkZmYwMGE4OTE3ZDY1NjFkOTcwNWRhZC5wbmciLCJ1c2VybmFtZSI6IkRldmFuc2ggTmVnaSJ9',
+  // },
   {
     title: 'AWS AI Practitioner Challenge',
     issuer: 'Udacity',
     date: 'Feb 2026',
     type: 'course',
+    verifyUrl: 'https://www.udacity.com/certificate/e/bf90b114-28c9-11f1-b2e3-e3a9b4f10d84  ',
   },
-  {
-    title: 'AWS AI & ML Scholars - 2026 Challenge Completion',
-    issuer: 'Udacity',
-    date: 'Mar 2026',
-    type: 'course',
-  },
-  {
-    title: 'AWS Scholars Program Project Badge: Build Your First AI Productivity App',
-    issuer: 'Udacity',
-    date: 'Mar 2026',
-    type: 'project',
-  },
-  {
-    title: 'AWS Scholars Program Project Badge: Analyze Data using AI with PartyRock',
-    issuer: 'Udacity',
-    date: 'Mar 2026',
-    type: 'project',
-  },
+  // {
+  //   title: 'AWS AI & ML Scholars - 2026 Challenge Completion',
+  //   issuer: 'Udacity',
+  //   date: 'Mar 2026',
+  //   type: 'course',
+  //   verifyUrl: 'https://confirm.udacity.com/e/a56e7068-0e5a-11f0-aa86-3757b5296736',
+  // },
+  // {
+  //   title: 'AWS Scholars Program Project Badge: Build Your First AI Productivity App',
+  //   issuer: 'Udacity',
+  //   date: 'Mar 2026',
+  //   type: 'project',
+  //   verifyUrl: 'https://confirm.udacity.com/e/6a7d2050-fef9-11ef-be73-e7789be00f0c',
+  // },
+  // {
+  //   title: 'AWS Scholars Program Project Badge: Analyze Data using AI with PartyRock',
+  //   issuer: 'Udacity',
+  //   date: 'Mar 2026',
+  //   type: 'project',
+  //   verifyUrl: 'https://confirm.udacity.com/e/1d26abb4-fef9-11ef-be73-e7789be00f0c',
+  // },
+  
 ];
 
 export const education: Education = {
